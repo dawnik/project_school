@@ -55,4 +55,3 @@ def get_enter(request, language_id):
             return render(request, 'training_polls/get_enter.html', {'language': language})
     else:
         return render(request, 'training_polls/get_enter.html', {'language': language})
-
