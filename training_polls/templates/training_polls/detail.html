@@ -1,0 +1,16 @@
+<h1>List record for training</h1>
+<a href="{% url 'training_polls:index' %}">Home</a>
+
+
+<form action="{% url 'training_polls:get_enter' language.id  %}" method="post">
+  {% csrf_token %}
+  Name user:<br>
+  <input type="text" name="name" value="{{ user }}">
+  <br>
+  Language course:<br>
+  <input type="text" name="language" value="{{ language }}">
+  <br><br>
+  <input type="submit" value="Submit">
+
+</form>
+

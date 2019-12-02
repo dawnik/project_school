@@ -1,0 +1,9 @@
+<h1>Register</h1>
+
+<a href="{% url 'training_polls:index' %}">Home</a>
+
+<form method="POST">
+    {% csrf_token %}
+        {{ form }}
+        <button type="submit">Sign Up</button>
+</form>
