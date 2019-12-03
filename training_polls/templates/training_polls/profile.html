@@ -1,6 +1,7 @@
 <h1>{{ user.username }}</h1>
 
 <a href="{% url 'training_polls:index' %}">Home</a>
+<a href="{% url 'training_polls:logout' %}">Logout</a>
 
 <h1>Lista twoich kursów:</h1>
 {% if list_language %}
