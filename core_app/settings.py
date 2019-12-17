@@ -129,4 +129,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'training_polls:login_page'
 LOGIN_URL = 'login'
-django_heroku.settings(locals())
+django_heroku.settings(locals(), databases=False)
