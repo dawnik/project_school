@@ -6,7 +6,6 @@
 <body>
 
 <h1>Home</h1>
-<h1>Branch master</h1>
 {% if user.is_authenticated %}
     <a href="{% url 'training_polls:profile' %}">Profile</a>
     <a href="{% url 'training_polls:logout' %}">Logout</a>
