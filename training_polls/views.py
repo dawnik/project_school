@@ -15,10 +15,11 @@ def index(request):
     return render(request, 'training_polls/index.html', context)
 
 
-def get_delete(request, id_field):
-    delete_element = ListTrainee.objects.get(pk=id_field)
+def get_delete(request, language_name):
+    delete_element = ListTrainee.objects.filter(language=language_name)
     delete_element.delete()
-    return render(request, 'training_polls/get_delete.html')
+    context = {'language_name': language_name}
+    return render(request, 'training_polls/get_delete.html',  context)
 
 
 def profile(request):

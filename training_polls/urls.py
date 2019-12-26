@@ -11,7 +11,7 @@ urlpatterns = [
     path('<int:language_id>/', views.detail, name='detail'),
     path('register/', views.register, name='register'),
     path('profile/', views.profile, name='profile'),
-    path('get_delete/<int:id_field>/', views.get_delete, name='get_delete'),
+    path('get_delete/<str:language_name>', views.get_delete, name='get_delete'),
     path('login/', auth_views.LoginView.as_view(template_name='training_polls/login.html'), name='login'),
     path('logout', auth_views.LogoutView.as_view(template_name='training_polls/logout.html'), name='logout'),
     path('password-reset/',

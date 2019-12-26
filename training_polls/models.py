@@ -17,7 +17,7 @@ class Language(models.Model):
 
 
 class ListTrainee(models.Model):
-    id_field = models.AutoField(primary_key=True)
+    # id_field = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20)
     language = models.CharField(max_length=20)
 

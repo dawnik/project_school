@@ -6,7 +6,7 @@
 <h1>Lista twoich kursów:</h1>
 {% if list_language %}
     {% for language in list_language %}
-        <form action="{% url 'training_polls:get_delete' language.id_field  %}" method="post">
+        <form action="{% url 'training_polls:get_delete' language.language  %}" method="post">
         {% csrf_token %}
             <ul>
                 <li>{{ language.language }}<input type="submit" value="Usun"></li>
