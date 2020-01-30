@@ -1,16 +1,59 @@
-<h1>List record for training</h1>
-<a href="{% url 'training_polls:index' %}">Home</a>
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+
+    <title>Site administration | Django site admin</title>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+    <meta name="robots" content="NONE,NOARCHIVE">
+
+</head>
+<body class=" dashboard" data-admin-utc-offset="0">
+<!-- Container -->
+
+<div id="container">
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+            <h1 id="site-name"><a href="{% url 'training_polls:index' %}">Portla Szkolenia</a></h1>
+
+        </div>
+        <div id="user-tools">
+        {% if user.is_authenticated %}
+            <a href="{% url 'training_polls:profile' %}">Profile</a>
+            <a href="{% url 'training_polls:logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'training_polls:login' %}">Login</a>
+            <a href="{% url 'training_polls:register' %}">Register</a>
+        {% endif %}
+        </div>
+    </div>
+    <!-- END Header -->
+    <!-- Content -->
+    <div id="content" class="colMS">
+        <h1>Kurs programowania {{ language }}.</h1>
+        <div id="content-main">
+                <div class="app-auth module">
+                  <form action="{% url 'training_polls:get_enter' language.id  %}" method="post">
+                    {% csrf_token %}
+                    Imię użytkownika:<br>
+                    <input type="text" name="name" value="{{ user }}">
+                    <br>
+                    Wybrany język programowania:<br>
+                    <input type="text" name="language" value="{{ language }}">
+                    <br><br>
+                    <input type="submit" value="Zapisz mnie">
+                  </form>
 
 
-<form action="{% url 'training_polls:get_enter' language.id  %}" method="post">
-  {% csrf_token %}
-  Name user:<br>
-  <input type="text" name="name" value="{{ user }}">
-  <br>
-  Language course:<br>
-  <input type="text" name="language" value="{{ language }}">
-  <br><br>
-  <input type="submit" value="Submit">
+        </div>
+    </div>
+    </div>
 
-</form>
+
+
+</body>
+</html>
 

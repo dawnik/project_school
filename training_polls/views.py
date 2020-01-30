@@ -9,13 +9,17 @@ def detail(request, language_id):
     return render(request, 'training_polls/detail.html', {'language': language})
 
 
+def dupa(request):
+    return render(request, 'training_polls/dupa.html')
+
+
 def index(request):
     language_list = Language.objects.order_by()
     context = {'language_list': language_list}
     return render(request, 'training_polls/index.html', context)
 
 
-def get_delete(request, language_name):
+def get_delete(request, language_name) :
     delete_element = ListTrainee.objects.filter(language=language_name)
     delete_element.delete()
     context = {'language_name': language_name}

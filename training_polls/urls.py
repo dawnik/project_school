@@ -6,6 +6,7 @@ from django.contrib.auth import views as auth_views
 app_name = 'training_polls'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('dupa', views.dupa, name='dupa'),
     path('login_page/', views.login_page, name='login_page'),
     path('get_enter/<int:language_id>/', views.get_enter, name='get_enter'),
     path('<int:language_id>/', views.detail, name='detail'),
