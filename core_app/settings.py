@@ -29,8 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Application definition
 
@@ -135,3 +133,14 @@ LOGIN_REDIRECT_URL = 'training_polls:login_page'
 LOGIN_URL = 'login'
 # django_heroku.settings(locals(), databases=False)
 # DATABASES['default'] = dj_database_url.config()
+
+# SMPT Configuration
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND_USER = 'qsmiespa@gmail.com'
+EMAIL_HOST_PASSWORD = 'tajneHASLO'
+# EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
