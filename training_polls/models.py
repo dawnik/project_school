@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 class Language(models.Model):
     language = models.CharField(max_length=20)
     pub_date = models.DateTimeField('date published')
+    describe = models.CharField(max_length=700, default='')
 
     def __str__(self):
         return self.language

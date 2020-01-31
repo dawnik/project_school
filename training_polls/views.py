@@ -15,7 +15,7 @@ def index(request):
     return render(request, 'training_polls/index.html', context)
 
 
-def get_delete(request, language_name):
+def get_delete(request, language_name) :
     delete_element = ListTrainee.objects.filter(language=language_name)
     delete_element.delete()
     context = {'language_name': language_name}
