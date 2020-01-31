@@ -20,5 +20,7 @@ app_name = 'core_app'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('training_polls.urls')),
+    path('account/', include('django.contrib.auth.urls')),
+
 ]
 

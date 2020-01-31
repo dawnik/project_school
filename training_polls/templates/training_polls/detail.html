@@ -33,7 +33,8 @@
     <!-- END Header -->
     <!-- Content -->
     <div id="content" class="colMS">
-        <h1>Kurs programowania {{ language }}.</h1>
+        <h1>Kurs programowania w {{ language }}.</h1>
+        <p>{{ language.describe }}</p>
         <div id="content-main">
                 <div class="app-auth module">
                   <form action="{% url 'training_polls:get_enter' language.id  %}" method="post">
