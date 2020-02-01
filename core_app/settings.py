@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['projectschoolsan.herokuapp.com']
 
 INSTALLED_APPS = [
     'training_polls.apps.TrainingPollsConfig',
-
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
